@@ -4,6 +4,7 @@ import ListHelpers._
  */
 object BasicApp {
   def main(args: Array[String]) = {
+    println("Generating fake data for the equation 2x + 3y + 4z = 7 in range -10:10")
     val trueW = List(2.0, 3.0, 4.0, -7.0)
 
     val examples = for {
@@ -16,6 +17,7 @@ object BasicApp {
       new LabeledPoint(s, point)
     }
 
+    println("Training a Perceptron...")
     val hebb = new PerceptronBuilder(10000, 0.001)
     val result = hebb.build(examples.toList)
     println(result.w)
